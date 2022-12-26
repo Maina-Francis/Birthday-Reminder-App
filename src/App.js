@@ -6,17 +6,17 @@ function App() {
   // Set state for the data
   const [people, setPeople] = useState(data);
 
+  // clear birthdays
+  const clearBirthdays = () => {
+    setPeople([]);
+  };
+
   return (
     <main>
       <section className="container">
         <h3> {people.length} birthdays today</h3>
         <List people={people} />
-        <button
-          type="button"
-          onClick={() => {
-            console.log("You clicked Clear all");
-          }}
-        >
+        <button type="button" onClick={clearBirthdays}>
           Clear All
         </button>
       </section>
